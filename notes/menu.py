@@ -5,10 +5,10 @@
 from datetime import datetime
 from colorama import Fore, Style
 
-from action import Action
-from model import Model
 from note import Note
 from view import View
+from model import Model
+from action import Action
 
 
 def run():
@@ -16,14 +16,14 @@ def run():
 
     while True:
         command = input(Fore.BLUE +
-                        '1 - создать заметку\n'
-                        '2 - прочитать заметку\n'
-                        '3 - обновить заметку\n'
-                        '4 - удалить заметку\n'
-                        '5 - удалить все заметки\n'
-                        '6 - прочитать все заметки\n'
-                        '7 - выход\n' +
-                        'Сделайте Ваш выбор: '
+                        '1 - Создать заметку\n'
+                        '2 - Прочитать заметку\n'
+                        '3 - Обновить заметку\n'
+                        '4 - Удалить заметку\n'
+                        '5 - Удалить все заметки\n'
+                        '6 - Прочитать все заметки\n'
+                        '7 - Выход\n' +
+                        'Сделайте Ваш Выбор: '
                         + Style.RESET_ALL)
         if command == '7':
             break
@@ -36,6 +36,7 @@ def run():
             print(Fore.GREEN + '\nПрочитать заметку:' + Style.RESET_ALL)
             if c.notes_exist():
                 c.show_note(int(get_number()))
+
         elif command == '3':
             if c.notes_exist():
                 print(Fore.YELLOW + '\nОбновить заметку:' + Style.RESET_ALL)
@@ -67,11 +68,12 @@ def run():
 
 
 def get_note_data():
-    note_id = 0
+    id = 0
     date = datetime.now()
-    title = input('Введите заголовок заметки: ')
-    text = input('Введите тело заметки: ')
-    return Note(note_id, date, title, text)
+    name = input('Введите имя заметки: ')
+    data = input('Введите текст заметки: ')
+    note = Note(id=id, date=date, name=name, data=data)
+    return note
 
 
 def get_number():

@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 # !/usr/bin/env python3
 
-from datetime import datetime
-from counter import counter
-
 
 class Note:
-    def __init__(self, id, name, data, date):
-        self.id = id
-        self.name = name
+    def __init__(self, id, date, name, data):
+        self._id = id
+        self._name = name
         self.data = data
         self.date = date
 
@@ -22,10 +19,10 @@ class Note:
 
     @property
     def name(self):
-        print(self._name)
         return self._name
 
-    @id.setter
+
+    @name.setter
     def name(self, value):
         self._name = value
 
@@ -33,7 +30,7 @@ class Note:
     def data(self):
         return self._data
 
-    @id.setter
+    @data.setter
     def data(self, value):
         self._data = value
 
@@ -47,5 +44,6 @@ class Note:
 
     def __str__(self):
         return f'\nЗаметка: {self._id}\nДата:{self._date}\nИмя: {self._name}\nСодержание: {self._data}\n'
+
 
 

@@ -47,7 +47,7 @@ class Action:
     def note_id_exist(self, search_id):
         notes = self.model.read_notes()
         for note in notes:
-            if note.note_id == search_id:
+            if note.id == search_id:
                 return True
         else:
             self.view.display_note_id_not_exist(search_id)

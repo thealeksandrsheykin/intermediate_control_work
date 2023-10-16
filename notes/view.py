@@ -3,7 +3,8 @@
 
 from colorama import Fore, Style
 
-class View(object):
+
+class View:
 
     @staticmethod
     def show_number_point_list(notes):
@@ -31,17 +32,17 @@ class View(object):
               + Style.RESET_ALL)
 
     @staticmethod
-    def display_note_id_not_exist(note_id):
+    def display_note_id_not_exist(id):
         print(Fore.RED + '**************************************************************'
               + Style.RESET_ALL)
-        print('Заметка с id: {} не найдена!'.format(note_id))
+        print('Заметка с id: {} не найдена!'.format(id))
         print(Fore.RED + '**************************************************************'
               + Style.RESET_ALL)
 
     @staticmethod
-    def display_note_id_exist(note_id):
+    def display_note_id_exist(id):
         print(Fore.RED + '**************************************************************')
-        print('Заметка с id: {} уже есть!'.format(note_id))
+        print('Заметка с id: {} уже есть!'.format(id))
         print('**************************************************************'
               + Style.RESET_ALL)
 
@@ -52,16 +53,16 @@ class View(object):
         print(Fore.YELLOW + '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++' + Style.RESET_ALL)
 
     @staticmethod
-    def display_note_updated(note_id):
+    def display_note_updated(id):
         print(Fore.YELLOW + '---   ---   ---   ---   ---   ---   ---   ---   ---   ---   --' + Style.RESET_ALL)
         print(Fore.GREEN + 'Заметка с id:{} обновлена успешно!'
-              .format(note_id) + Style.RESET_ALL)
+              .format(id) + Style.RESET_ALL)
         print(Fore.YELLOW + '---   ---   ---   ---   ---   ---   ---   ---   ---   ---   --' + Style.RESET_ALL)
 
     @staticmethod
-    def display_note_deletion(note_id):
+    def display_note_deletion(id):
         print('--------------------------------------------------------------')
-        print(Fore.LIGHTRED_EX + 'Удаление заметки с id: {} выполнено!'.format(note_id) + Style.RESET_ALL)
+        print(Fore.LIGHTRED_EX + 'Удаление заметки с id: {} выполнено!'.format(id) + Style.RESET_ALL)
         print('--------------------------------------------------------------')
 
     @staticmethod
@@ -71,7 +72,5 @@ class View(object):
         print('--------------------------------------------------------------' + Style.RESET_ALL)
 
 
-def display_note_id_not_exist(search_id):
-    return search_id
-
-
+def display_note_id_not_exist(id):
+    return id
