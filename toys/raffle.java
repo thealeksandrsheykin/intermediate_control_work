@@ -8,7 +8,7 @@ import java.util.Random;
 public class Raffle {
     ToyList currentToys;
     ParticipantQueue currentParticipants;
-    double lossWeight = 0; //0 для соответствия заданию, где веса разбиваются на полную вероятность в 100%
+    double lossWeight = 0; 
     int lossId;
 
     ChanceCalc cc = new ChanceCalc();
@@ -32,7 +32,7 @@ public class Raffle {
                 Participant k = kids.iterator().next();
                 try {
                     Toy win = cc.checkPrize(prizes, winRoll);
-                    //showRoll(k,win,winRoll);
+                    showRoll(k,win,winRoll);
                     prizes = qc.adjustQuantityLeft(win,tl,prizes);
                     log.write(showWin(k, win) + "\n");
                 } catch(Exception e) {
