@@ -2,14 +2,15 @@
 # !/usr/bin/env python3
 
 from datetime import datetime
+from counter import counter
 
 
 class Note:
-    def __init__(self):
-        self._data = None
-        self._name = None
-        self._id = None
-        self._date = None
+    def __init__(self, id, name, data, date):
+        self.id = id
+        self.name = name
+        self.data = data
+        self.date = date
 
     @property
     def id(self):
@@ -21,6 +22,7 @@ class Note:
 
     @property
     def name(self):
+        print(self._name)
         return self._name
 
     @id.setter
@@ -29,7 +31,7 @@ class Note:
 
     @property
     def data(self):
-        return self.data
+        return self._data
 
     @id.setter
     def data(self, value):
@@ -37,14 +39,13 @@ class Note:
 
     @property
     def date(self):
-        return self.date
-
-    @property
-    def date(self):
-        return self._date.strftime('%Y, %B %d, %A | %H:%M')
+        return self._date
 
     @date.setter
     def date(self, value):
-        self._date = datetime.strftime(value, '%Y, %B %d, %A | %H:%M')
+        self._date = value
+
+    def __str__(self):
+        return f'\nЗаметка: {self._id}\nДата:{self._date}\nИмя: {self._name}\nСодержание: {self._data}\n'
 
 
